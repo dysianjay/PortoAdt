@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Aditya Pratama</title>
+    <style>
+      :root {
+        --ink: #172b2b;
+        --accent: #d76b4b;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        padding: 32px 18px;
+        background: #e8eeea;
+        color: var(--ink);
+        font:
+          16px/1.6 Arial,
+          sans-serif;
+      }
+      .container {
+        width: min(100%, 1080px);
+        margin: auto;
+        background: #fffdf9;
+      }
+      .banner {
+        min-height: 210px;
+        display: flex;
+        align-items: end;
+        background:
+          linear-gradient(90deg, #172b2be8, #172b2b22),
+          url("./img/banner.jpeg") center 11% / cover no-repeat;
+      }
+      .banner-content {
+        padding: 28px 36px;
+        color: white;
+      }
+      .banner-content h1 {
+        font-size: 2rem;
+      }
+      .content-wrapper {
+        display: flex;
+        min-height: 380px;
+      }
+      .sidebar {
+        width: 29%;
+        padding: 28px 18px;
+        background: #edf2ed;
+      }
+      .sidebar nav {
+        display: grid;
+        gap: 6px;
+      }
+      .nav-button {
+        width: 100%;
+        padding: 9px 10px;
+        border: 0;
+        border-left: 3px solid transparent;
+        background: transparent;
+        color: var(--ink);
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+      }
+      .nav-button:hover,
+      .nav-button[aria-pressed="true"] {
+        border-left-color: var(--accent);
+        background: white;
+        color: #a3442d;
+      }
+      .nav-button:focus-visible {
+        outline: 2px solid var(--accent);
+      }
+      .main-content {
+        width: 71%;
+        padding: 30px 36px;
+      }
+      .main-content h2 {
+        margin-bottom: 14px;
+        font-size: 1.4rem;
+      }
+      .content-panel[hidden] {
+        display: none;
+      }
+      .content-panel p + p {
+        margin-top: 10px;
+      }
+      .content-panel h3 {
+        margin: 16px 0 4px;
+        font-size: 1rem;
+      }
+      .content-list {
+        padding-left: 20px;
+      }
+      .content-list li {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 22px;
+        background: var(--ink);
+        color: white;
+        text-align: center;
+        font-weight: bold;
+      }
+      .footer-label {
+        display: block;
+        color: #f0a087;
+        font-size: 0.8rem;
+      }
+      @media (max-width: 600px) {
+        body {
+          padding: 14px;
+        }
+        .banner {
+          min-height: 180px;
+        }
+        .banner-content,
+        .sidebar,
+        .main-content {
+          padding: 22px;
+        }
+        .banner-content h1 {
+          font-size: 1.55rem;
+        }
+        .content-wrapper {
+          flex-direction: column;
+        }
+        .sidebar,
+        .main-content {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header class="banner">
+        <div class="banner-content">
+          <h1>Aditya Pratama, S.Kom.</h1>
+          <p>Founder &amp; Lead Full-Stack Engineer</p>
+        </div>
+      </header>
+      <div class="content-wrapper">
+        <aside class="sidebar">
+          <nav aria-label="Navigasi portofolio">
+            <button class="nav-button" data-panel="profil" aria-pressed="true">
+              Profil
+            </button>
+            <button
+              class="nav-button"
+              data-panel="pendidikan"
+              aria-pressed="false"
+            >
+              Pendidikan
+            </button>
+            <button
+              class="nav-button"
+              data-panel="organisasi"
+              aria-pressed="false"
+            >
+              Organisasi
+            </button>
+            <button
+              class="nav-button"
+              data-panel="pekerjaan"
+              aria-pressed="false"
+            >
+              Pekerjaan
+            </button>
+            <button class="nav-button" data-panel="karya" aria-pressed="false">
+              Karya / Produk
+            </button>
+          </nav>
+        </aside>
+        <main class="main-content" aria-live="polite">
+          <section class="content-panel" data-content="profil">
+            <h2>Profil</h2>
+            <p>
+              Halo, saya <strong>Aditya Pratama, S.Kom.</strong>, lulusan Sistem
+              Informasi UIN Sulthan Thaha Saifuddin Jambi.
+            </p>
+            <p>
+              Saya Founder &amp; Lead Full-Stack Engineer di studio software dan
+              UI/UX. Fokus saya mencakup backend, frontend, antarmuka modern,
+              dan web 3D.
+            </p>
+            <p>
+              Ke depan, saya ingin mengembangkan studio secara nasional dan
+              membangun platform digital untuk UMKM serta pendidikan Indonesia.
+            </p>
+          </section>
+          <section class="content-panel" data-content="pendidikan" hidden>
+            <h2>Riwayat Pendidikan</h2>
+            <ul class="content-list">
+              <li>
+                <strong>S1 Sistem Informasi</strong> — UIN Sulthan Thaha
+                Saifuddin Jambi
+              </li>
+              <li><strong>SMKN 3 Batang Hari</strong></li>
+              <li><strong>SMPN 4 Muara Jangga</strong></li>
+              <li><strong>SDN 107/1 Olak Jong</strong></li>
+            </ul>
+          </section>
+          <section class="content-panel" data-content="organisasi" hidden>
+            <h2>Riwayat Organisasi</h2>
+            <h3>KOPMA (Koperasi Mahasiswa)</h3>
+            <p>
+              Aktif dalam pengembangan program dan manajemen operasional
+              organisasi.
+            </p>
+          </section>
+          <section class="content-panel" data-content="pekerjaan" hidden>
+            <h2>Riwayat Pekerjaan</h2>
+            <ul class="content-list">
+              <li>
+                <strong
+                  >Founder &amp; Lead Engineer, Studio Software &amp;
+                  UI/UX</strong
+                >
+                (2028–2031). Memimpin tim dengan Vue.js, Node.js, dan Supabase.
+              </li>
+              <li>
+                <strong
+                  >Frontend Web Developer, Perusahaan Teknologi Nasional</strong
+                >
+                (2026–2028). Menerjemahkan desain Figma ke antarmuka responsif.
+              </li>
+              <li>
+                <strong>Internship Pengarsipan Data, BRI</strong> (2024).
+                Mendukung pengelolaan arsip nasabah dengan Brimen.
+              </li>
+            </ul>
+          </section>
+          <section class="content-panel" data-content="karya" hidden>
+            <h2>Karya Tulis / Produk</h2>
+            <ul class="content-list">
+              <li>
+                <strong>temUKM</strong> — Direktori organisasi kampus berbasis
+                web, di-deploy melalui Vercel.
+              </li>
+              <li>
+                <strong>Interactive 3D Web Motion</strong> — Eksperimen Three.js
+                dan MediaPipe untuk gestur tangan.
+              </li>
+              <li>
+                <strong>Mini Perpustakaan App</strong> — Aplikasi Python,
+                Tkinter, dan SQLite3 untuk peminjaman buku.
+              </li>
+              <li>
+                <strong>Enterprise Digital Ecosystem</strong> — Proyeksi SaaS
+                berbasis cloud untuk operasional bisnis lokal.
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+      <footer class="footer">
+        <span class="footer-label">MOTTO</span>
+        <p>"Sesuatu yang tidak dipertaruhkan, tidak akan dimenangkan."</p>
+      </footer>
+    </div>
+    <script>
+      document.querySelector(".sidebar").addEventListener("click", (event) => {
+        const button = event.target.closest(".nav-button");
+        if (!button) return;
+
+        document.querySelectorAll(".nav-button").forEach((item) => {
+          item.setAttribute("aria-pressed", String(item === button));
+        });
+        document.querySelectorAll(".content-panel").forEach((panel) => {
+          panel.hidden = panel.dataset.content !== button.dataset.panel;
+        });
+      });
+    </script>
+  </body>
+</html>
